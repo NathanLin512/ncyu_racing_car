@@ -68,7 +68,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="button_start_game">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -76,6 +76,9 @@
       <width>201</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
      <string/>
@@ -115,7 +118,7 @@
      <string>行駛距離：0公尺</string>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdclock">
+   <widget class="QLCDNumber" name="lcd_clock">
     <property name="geometry">
      <rect>
       <x>660</x>
