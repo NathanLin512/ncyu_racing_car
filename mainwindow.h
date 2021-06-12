@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
         ~MainWindow();
 
     protected:
-        void KeyPressEvent(QKeyEvent *);
+        void keyPressEvent(QKeyEvent *);
 
     private slots:
         void update_object(); //遊戲物體移動更新
@@ -24,7 +24,11 @@ class MainWindow : public QMainWindow
 
         void on_button_start_game_clicked();
 
-    private:
+        void on_actionstart_game_triggered();
+
+        void on_actionclose_game_triggered();
+
+private:
             Ui::MainWindow *ui;
 
             int time;           //遊戲時間
@@ -37,10 +41,12 @@ class MainWindow : public QMainWindow
             QTimer *object_timer;    //物體移動計時器
             QTimer *clock_timer;     //遊戲時間計時器
 
-            void game_start();
-            void game_pause();
-            void game_stop();
-            void move_car();
-
+            void game_start();      //遊戲開始
+            void game_pause();      //遊戲暫停
+            void game_stop();       //遊戲停止
+            void move_car();        //車子移動
+            void move_blocks();     //障礙物移動
+            void detect_bolcks();   //偵測障礙物位置
+            bool is_colliion(int x, int y);     //判斷是否撞到障礙物
 };
 #endif // MAINWINDOW_H
